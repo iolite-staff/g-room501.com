@@ -286,7 +286,7 @@ require_once('../inc/h_admin.inc');
     <td>　</td>
     <td align="left"><a href="comment.php">2-6.緊急コメント</a></td>
   </tr>
--->
+
   <tr bgcolor="#43888a">
     <td colspan="2" align="left"><strong><font color="#FFFFFF">3.Parts & Accessories</font></strong></td>
   </tr>
@@ -298,6 +298,7 @@ require_once('../inc/h_admin.inc');
     <td>　</td>
     <td align="left"><a href="others_title.php">3-2.Parts & Accessories　タイトル設定</a></td>
   </tr>
+-->
   <tr bgcolor="#43888a">
     <td colspan="2" align="left"><strong><font color="#FFFFFF">4.その他</font></strong></td>
   </tr>
