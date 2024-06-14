@@ -1,0 +1,41 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.series {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	padding: 2px 2px 2px 10px;
+}
+.type {
+	font-size: 12px;
+	font-weight: bold;
+	color: #330000;
+}
+.small{
+	font-size: 10px;
+}
+.medium{
+	font-size: 11px;
+}
+.f_left{
+	float:left;
+}
+.f_right{
+	float:right;
+}
+.title{
+	background-color:#990000;
+	width:810px;
+	color:#FFFFFF;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+}
+.f_clear{
+	clear:both;
+	margin:0px;
+	padding:0px;
+	font-size:1px;
+	line-height:1px;
+}

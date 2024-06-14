@@ -1,0 +1,50 @@
+.white {
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.price {
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.title {
+	font-size: 16px;
+	color: #663333;
+	font-weight: bold;
+}
+.name {
+	font-size: 12px;
+	color: #333333;
+}
+h3 {
+	font-size: 16px;
+	color: #666633;
+	margin: 3px;
+	padding: 0px;
+}
+li {
+	font-size: 12px;
+	color: #601F00;
+	margin: 3px;
+	padding: 0px;
+}
+.profile{
+	font-size: 12px;
+	color: #333333;
+	margin: 5px;
+	line-height: 20px;
+}
+.text {
+	font-size: 11px;
+	color: #666666;
+	line-height: 18px;
+	margin: 3px;
+}
+.model {
+	font-size: 14px;
+	color: #aa3333;
+	font-weight: bold;
+}
+a{
+	font-size: 12px;
+	color: #601F00;
+}

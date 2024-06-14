@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* _____________________________________________________________________ TEXT */
+
+.nowrap{
+	white-space:nowrap;
+}
+
+em{
+	font-style:normal;
+	font-weight:bold;
+}
+
+p {
+	margin: 0;
+}

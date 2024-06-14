@@ -1,0 +1,3 @@
+AddType text/x-server-parsed-html .html .htm .php .inc
+AddHandler default-handler .png .gif .jpg
+AddType application/x-httpd-cgi .sh
