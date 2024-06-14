@@ -156,11 +156,11 @@ require_once('../inc/h_admin.inc');
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta http-equiv="Content-Script-Type" content="text/JavaScript">
-<title>Case & Accessories (<?=$page?>ページ目)</title>
+<title>Parts & Accessories (<?=$page?>ページ目)</title>
 </head>
 <BODY background="<?=IMGPATH?>bg_wood.gif" vlink="#CC0000" leftmargin="0" topmargin="10">
 <a href="login.php">&lt;&lt; Back</a><br>
-<p align="center"><strong><font color="#FF0000" size="2"><a href="<?=BASEPATH?>ca/index.html" target="kakunin">＜ホームページ Case & Accessories へ＞</a></font></strong></p>
+<p align="center"><strong><font color="#FF0000" size="2"><a href="<?=BASEPATH?>ca/index.html" target="kakunin">＜ホームページ Parts & Accessories へ＞</a></font></strong></p>
 <p><?=$msg?>
   <div align="center">
 <?php

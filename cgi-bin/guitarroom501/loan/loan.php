@@ -86,7 +86,7 @@ require_once('../inc/h_common.inc');
 					<li><a href="<?php echo $home_url ?>inventory/index.html"><span>在庫リスト</span>Inventory</a></li>
 					<li><a href="<?php echo $home_url ?>shop/index.html"><span>アクセス</span>Shop Guide</a></li>
 					<li><a href="<?php echo $home_url ?>order/index.html"><span>ご購入</span>How to Order</a></li>
-					<li><a href="<?php echo $home_url ?>ca/index.html"><span>ケース＆アクセサリー</span>Case & Accessories</a></li>
+					<li><a href="<?php echo $home_url ?>ca/index.html"><span>ケース＆アクセサリー</span>Parts & Accessories</a></li>
 					<li><a href="<?php echo $home_url ?>links/index.html"><span>リンク</span>Links</a></li>
 					<li><a href="<?php echo $home_url ?>repairs/index.html"><span>リペア</span>Repairs</a></li>
 				</ul>

@@ -98,7 +98,7 @@ require_once('../inc/h_common.inc');
 						<li><a href="<?php echo $home_url ?>inventory/category2.html">Electric Bass</a></li>
 						<li><a href="<?php echo $home_url ?>inventory/category3.html">Acoustic Guitar</a></li>
 						<li><a href="<?php echo $home_url ?>inventory/category4.html">Others</a></li>
-						<li><a href="<?php echo $home_url ?>inventory/category5.html">Case & Accessories</a></li>
+						<li><a href="<?php echo $home_url ?>inventory/category5.html">Parts & Accessories</a></li>
 					</ul>
 				</li>
 				<li class="menu-item"><a href="<?php echo $home_url ?>shopguide/index.html">Shop Guide</a></li>
