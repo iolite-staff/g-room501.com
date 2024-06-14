@@ -48,6 +48,9 @@ require_once('../inc/h_admin.inc');
 	}elseif($get['maker'] == 4){
 		$page_title = "Others";
 		$item_num = CATALOG_TYPE_4;
+	}elseif($get['maker'] == 5){
+		$page_title = "Case&Accessories";
+		$item_num = CATALOG_TYPE_5;
 	}
 
 // maru
@@ -269,21 +272,11 @@ require_once('../inc/h_admin.inc');
 		$no = $post['kill'];
 		//--- テキスト削除
 		//非表示フラグを初期値とする
-		$nulldata = "";
+		$nulldata = array();
 		$nulldata[0] = "19000101000000";
-		if($get['maker'] == 1){
-			$nulldata[1] = "";
-		}elseif($get['maker'] == 2){
-			$nulldata[1] = "";
-		}elseif($get['maker'] == 3){
-			$nulldata[1] = "";
-		}elseif($get['maker'] == 4){
-			$nulldata[1] = "";
-		}
 		$nulldata[8] = "checked";
 		$nulldata[10] = "checked";
 		$nulldata[11] = "19000101";
-		$nulldata[12] = "1";
 		$path = DATPATH."guitar/".$get['maker']."/".$no.".txt";
 		//テキストファイルWrite
 		if(!file_write($path,100,$nulldata)){
@@ -466,7 +459,7 @@ require_once('../inc/h_admin.inc');
 	){
 		$spacer = "                                                                ";
 		$upd_i = 0;
-		for($type=1;$type<=4;$type++){
+		for($type=1;$type<=5;$type++){
 			if($type == 1){
 				$item_count = CATALOG_TYPE_1;
 			}elseif($type == 2){
@@ -475,6 +468,8 @@ require_once('../inc/h_admin.inc');
 				$item_count = CATALOG_TYPE_3;
 			}elseif($type == 4){
 				$item_count = CATALOG_TYPE_4;
+			}elseif($type == 5){
+				$item_count = CATALOG_TYPE_5;
 			}
 			for($i=0;$i<$item_count;$i++){
 				//--- テキストファイルRead
@@ -613,6 +608,7 @@ function upd_data(){
 			$path = DATPATH."guitar/".$_GET['maker']."/".substr($name_index[$i],125,4).".txt";
 //	for($i=0;$i<$item_num;$i++){
 //		$path = DATPATH."guitar/".$_GET['maker']."/".sprintf('%04d',$i).".txt";
+
 			//データファイルRead
 			if(!file_read($path,100,$item)){
 				print("File read error!!( ".$path." )<BR>\n");
@@ -699,7 +695,6 @@ function upd_data(){
 			}
 		}
 	}
-
 ?>
     </select>
     <input name="maker" type="hidden" value="<?=$get['maker']?>">
@@ -954,7 +949,7 @@ function upd_data(){
 <input type="text" name="dat[300]" size="60" maxlength="50" value="<?=$dat[300]?>">
         </td>
       </tr>
-      <tr style="display:none;>
+      <tr style="display:none;">
         <td bgcolor="<?=$bgcolor?>">
           <div align="center"><strong><font size="2" color="#FFFFFF">説明文(200行)</font></strong></div>
         </td>
@@ -983,7 +978,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">写真（FRONT）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF">写真<?php if($get['maker'] == 5){print("1");}else{print("（FRONT）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[31]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -991,7 +986,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">写真（BACK）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF">写真<?php if($get['maker'] == 5){print("2");}else{print("(BACK）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[32]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -999,7 +994,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 写真（FRONT）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真3");}else{print("拡大 写真（FRONT）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[33]" size="30" maxlength="255">
@@ -1007,7 +1002,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 写真（BACK）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真4");}else{print("拡大 写真（BACK）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[34]" size="30" maxlength="255">
@@ -1015,7 +1010,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（ヘッド表）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真5");}else{print("拡大 パーツ写真<br>（ヘッド表）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[35]" size="30" maxlength="255">
@@ -1023,7 +1018,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（ヘッド裏）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真6");}else{print("拡大 パーツ写真<br>（ヘッド裏）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[36]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1031,7 +1026,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（ネック表）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真7");}else{print("拡大 パーツ写真<br>（ネック表）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[37]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1039,7 +1034,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（ネック裏）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真8");}else{print("拡大 パーツ写真<br>（ネック裏）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[38]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1047,7 +1042,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（ボディー表）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真9");}else{print("拡大 パーツ写真<br>（ボディー表）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[39]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1055,7 +1050,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（ボディー裏）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真10");}else{print("拡大 パーツ写真<br>（ボディー裏）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[40]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1063,7 +1058,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（右側面）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真11");}else{print("拡大 パーツ写真<br>（右側面）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[41]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1071,7 +1066,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 パーツ写真<br>（左側面）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真12");}else{print("拡大 パーツ写真<br>（左側面）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[42]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1079,7 +1074,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 特殊１</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真13");}else{print("拡大 特殊１");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[43]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1087,7 +1082,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 特殊２</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真14");}else{print("拡大 特殊２");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[44]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1095,7 +1090,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 特殊３</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真15");}else{print("拡大 特殊３");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[45]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1103,7 +1098,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 特殊４</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真16");}else{print("拡大 特殊４");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[46]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1111,7 +1106,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">拡大 ギターケース</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真17");}else{print("拡大 ギターケース");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[47]" size="30" maxlength="255"><font size="2"> ※横500 × 縦500</font>
@@ -1119,7 +1114,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">ギターリスト</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF"><?php if($get['maker'] == 5){print("写真18");}else{print("拡大 ギターリスト");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[48]" size="30" maxlength="255"><!--<font size="2"> ※横500 × 縦500</font>-->
@@ -1127,7 +1122,7 @@ function upd_data(){
       </tr>
       <tr>
         <td bgcolor="<?=$bgcolor?>">
-          <div align="center"><strong><font size="2" color="#FFFFFF">写真（その他）</font></strong></div>
+          <div align="center"><strong><font size="2" color="#FFFFFF">写真<?php if($get['maker'] == 5){print("19");}else{print("(その他）");}?></font></strong></div>
         </td>
         <td align="left">
           <input type="file" name="file[49]" size="30" maxlength="255"><!--<font size="2"> ※横500 × 縦500</font>-->

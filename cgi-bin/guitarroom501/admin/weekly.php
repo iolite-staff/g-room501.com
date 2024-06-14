@@ -176,7 +176,7 @@ function upd_data(type){
         <td align="left">
     <select name="itemnum">
 <?php
-	for($type=1;$type<=4;$type++){
+	for($type=1;$type<=5;$type++){
 
 		$idxpath = DATPATH."guitar/".$type."/name_index.txt";
 

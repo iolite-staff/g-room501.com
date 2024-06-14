@@ -63,12 +63,14 @@ require_once('../inc/h_common.inc');
 		$item_num = CATALOG_TYPE_3;
 	}elseif($_GET['type'] == 4){
 		$item_num = CATALOG_TYPE_4;
+	}elseif($_GET['type'] == 5){
+		$item_num = CATALOG_TYPE_5;
 	}
 
 	$idxpath = DATPATH."guitar/upd_index.txt";
 
 	//INDEXファイルRead
-	if(!file_read($idxpath,2700,$upd_index)){
+	if(!file_read($idxpath,3000,$upd_index)){
 		print("File read error!!( ".$idxpath." )<BR>\n");
 		exit;
 	}
@@ -79,12 +81,12 @@ require_once('../inc/h_common.inc');
 
 	$old_day = date('Ymd',time()-5184000)+0;
 
-	for($i=0;$i<2700;$i++){
+	for($i=0;$i<3000;$i++){
 		//INDEXファイルの内容が空の場合、ループ脱出
 		if($upd_index[$i] == ""){
 			break;
 		//表示した件数が12件を超えた場合、ループ脱出
-		}elseif($disp_cnt >= 2700){
+		}elseif($disp_cnt >= 3000){
 			break;
 		}else{
 			$path = DATPATH."guitar/".substr($upd_index[$i],14,1)."/".substr($upd_index[$i],15,4).".txt";
@@ -107,9 +109,9 @@ require_once('../inc/h_common.inc');
 				$item_name = htmlspecialchars($dat[1])." ".htmlspecialchars($dat[2]);
 				if(file_exists(DATPATH."guitar/".substr($upd_index[$i],14,1)."/".substr($upd_index[$i],15,4)."_small.jpg")){
 					if($dat[8] != "checked"){
-						$dat1txt = "<img src=\"".DATPATH3."guitar/".substr($upd_index[$i],14,1)."/".substr($upd_index[$i],15,4)."_small.jpg\" alt=\"".$item_name."\">";
+						$dat1txt = "<img src=\"".DATPATH3."guitar/".substr($upd_index[$i],14,1)."/".substr($upd_index[$i],15,4)."_small.jpg\" alt=\"".$item_name."\" loading=\"lazy\">";
 					}else{
-						$dat1txt = "<img src=\"".DATPATH3."guitar/".substr($upd_index[$i],14,1)."/".substr($upd_index[$i],15,4)."_small.jpg\" alt=\"".$item_name."\">";
+						$dat1txt = "<img src=\"".DATPATH3."guitar/".substr($upd_index[$i],14,1)."/".substr($upd_index[$i],15,4)."_small.jpg\" alt=\"".$item_name."\" loading=\"lazy\">";
 					}
 				}else{
 					$dat1txt = "";
@@ -163,7 +165,7 @@ require_once('../inc/h_common.inc');
 
 	//表示
 	print('<ul class="product-list">');
-	for($i=0;$i<2700;$i++){
+	for($i=0;$i<3000;$i++){
 		if(isset($txt[$i])){
 			print("<li style=\"position: relative;\">");
 			print($txt[$i]);

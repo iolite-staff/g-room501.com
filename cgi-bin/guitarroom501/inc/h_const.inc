@@ -75,4 +75,5 @@ define("CATALOG_TYPE_1", 800);
 define("CATALOG_TYPE_2", 300);
 define("CATALOG_TYPE_3", 1300);
 define("CATALOG_TYPE_4", 300);
+define("CATALOG_TYPE_5", 300);
 ?>
