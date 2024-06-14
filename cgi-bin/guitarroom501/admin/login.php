@@ -229,6 +229,10 @@ require_once('../inc/h_admin.inc');
     <td>　</td>
     <td align="left"><a href="catalog.php?maker=4">1-4.Others</a></td>
   </tr>
+  <tr>
+    <td>　</td>
+    <td align="left"><a href="catalog.php?maker=5">1-5.Parts & Accessories</a></td>
+  </tr>
 <!--
   <tr bgcolor="#43888a">
     <td colspan="2" align="left"><strong><font color="#FFFFFF">2.商品メンテ(ファイルメーカーからのインポート)</font></strong></td>
