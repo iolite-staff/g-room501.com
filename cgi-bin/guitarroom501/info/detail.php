@@ -93,7 +93,7 @@ require_once('../inc/h_common.inc');
 				<li class="menu-item"><a href="<?php echo $home_url ?>index.html">Home</a></li>
 				<li class="menu-item"><a href="<?php echo $home_url ?>inventory/index.html">Inventory</a>
 					<ul class="submenu">
-						<li><a href="<?php echo $home_url ?>inventroy/category.html">All</a></li>
+						<li><a href="<?php echo $home_url ?>inventory/category.html">All</a></li>
 						<li><a href="<?php echo $home_url ?>inventory/category1.html">Electric Guitar</a></li>
 						<li><a href="<?php echo $home_url ?>inventory/category2.html">Electric Bass</a></li>
 						<li><a href="<?php echo $home_url ?>inventory/category3.html">Acoustic Guitar</a></li>
