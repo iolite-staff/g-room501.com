@@ -428,3 +428,6 @@ body>.info_area .inner .item img.right{
 	flex-wrap: wrap;
 	flex-direction: row-reverse;
 }
+.deliv_charge img{
+	width: 80%;
+}

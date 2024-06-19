@@ -330,3 +330,6 @@ body>.info_area .inner .item img{
 	justify-content: center;
 	flex-wrap: wrap;
 }
+.deliv_charge img{
+	width: 100%;
+}
