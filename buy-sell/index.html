@@ -185,23 +185,18 @@
 </footer>
 <script type="text/javascript" src="../js/global.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function(){
-			var windowsize = window.matchMedia('screen and (max-width:1023px)');
-			function checkBreakPoint(windowsize) {
-				if (windowsize.matches) {
-					$('body>header>nav').css({'display':'none'});
-				} else {
-					$('body>header>nav').css({'display':'block'});
-				}
-			}
-			windowsize.addListener(checkBreakPoint);
-			checkBreakPoint(windowsize);
-			$("#nav_sp").click(function () {
-				$("body>header>nav").slideToggle(300);
-				$(this).toggleClass('open');
-				$(this).addClass('close');
-			});
+	$(document).ready(function(){
+		$('.slider').bxSlider({
+			mode: 'fade',
+			auto: true,
+			controls: false,
+			speed: 2500
 		});
+		$("body>div>header .nav-menu").click(function () {
+			$("body>div>header nav").slideToggle(200);
+			$(this).toggleClass("active");
+		});
+	});
 
 		$(function() {
 			var offset = $('nav').offset();
