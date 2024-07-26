@@ -95,6 +95,16 @@ require_once('../inc/h_admin.inc');
 		}elseif($dat[8] == ""){
 			$dat[11] = "";
 		}
+		//--- 売り切れフラグを更新するか
+		if($dat[0] == ""
+		|| $dat[0] == 0
+		|| $post['dat0upd'] == "checked"
+		&& $dat[11] == ""
+		|| $dat[11] == 0
+		|| $dat[8] == "checked"
+		){
+			$dat[11] = date('YmdHis');
+		}		
 		//--- Marks Down欄表示フラグがセットされているか
 		if($dat[10] == "checked"
 		&& $dat[48] == ""
@@ -453,11 +463,14 @@ require_once('../inc/h_admin.inc');
 		update_day();
 	}
 
+	$name_index = [];
+
 	//INDEX更新
 	if(isset($dat[1])
 	|| isset($post['kill'])
 	){
 		$spacer = "                                                                ";
+		$type = 0;
 		$upd_i = 0;
 		for($type=1;$type<=5;$type++){
 			if($type == 1){
@@ -556,7 +569,7 @@ function upd_data(){
 ?>
     <select name="no">
 <?php
-	//----- 最新の10件目の更新日付を取得する
+/* 	//----- 最新の10件目の更新日付を取得する
 	$idxpath = DATPATH."guitar/upd_index.txt";
 
 	//INDEXファイルRead
@@ -588,7 +601,7 @@ function upd_data(){
 			$disp_cnt++;
 		}
 	}
-
+ */
 
 	$idxpath = DATPATH."guitar/".$_GET['maker']."/name_index.txt";
 
@@ -612,7 +625,8 @@ function upd_data(){
 			//データファイルRead
 			if(!file_read($path,100,$item)){
 				print("File read error!!( ".$path." )<BR>\n");
-				exit;
+				continue;
+				//exit;
 			}
 			if($item[2] != ""){
 				//更新日作成
@@ -658,7 +672,8 @@ function upd_data(){
 			//データファイルRead
 			if(!file_read($path,100,$item)){
 				print("File read error!!( ".$path." )<BR>\n");
-				exit;
+				continue;
+				//exit;
 			}
 			if($item[2] == ""){
 				//更新日作成
@@ -713,7 +728,7 @@ function upd_data(){
 			//テキストファイルRead
 			if(!file_read($path,301,$dat)){
 				print("File read error!!( /".$path." )<BR>\n");
-				exit;
+				//exit;
 			}
 		}
 
@@ -749,7 +764,7 @@ function upd_data(){
 <p align="center"><strong><font color="#FF0000" size="2"><a href="<?=PHPPATH?>catalog/detail.php?maker=<?=$get['maker']?>&cd=<?=$no?>" target="kakunin">＜この商品の詳細画面へ＞</a></font></strong></p>
 <p><?=$msg?>
   <div align="center">
-    <form name="Update" method="post" enctype="multipart/form-data" action="catalog.php?maker=<?=$get['maker']?>&no=<?=$no?>">
+    <form name="Update" method="post" enctype="multipart/form-data" action="catalog.php?no=<?=$no?>&maker=<?=$get['maker']?>">
     <table width="680" border="0" cellspacing="0" cellpadding="3">
       <tr bordercolor="#FFFFFF" bgcolor="#000000">
         <td width="515" align="left"><strong><font size="2" color="#FFFFFF">＃<?=$no?> の削除</font></strong><font size="2" color="#FFFFFF">　※削除した情報は元には戻せません。
@@ -809,17 +824,7 @@ function upd_data(){
           <div align="center"><strong><font size="2" color="#FFFFFF">メーカー名</font></strong></div>
         </td>
         <td align="left">
-<?php
-	if($get['maker'] == 1){
-		print("<input type=\"text\" name=\"dat[1]\" size=\"60\" maxlength=\"50\" value=\"".$dat[1]."\">\n");
-	}elseif($get['maker'] == 2){
-		print("<input type=\"text\" name=\"dat[1]\" size=\"60\" maxlength=\"50\" value=\"".$dat[1]."\">\n");
-	}elseif($get['maker'] == 3){
-		print("<input type=\"text\" name=\"dat[1]\" size=\"60\" maxlength=\"50\" value=\"".$dat[1]."\">\n");
-	}elseif($get['maker'] == 4){
-		print("<input type=\"text\" name=\"dat[1]\" size=\"60\" maxlength=\"50\" value=\"".$dat[1]."\">\n");
-	}
-?>
+					<input type="text" name="dat[1]" size="60" maxlength="50" value="<?=$dat[1]?>">
         </td>
       </tr>
       <tr>

@@ -326,6 +326,10 @@ body{
 	font-size:32px;
 }
 
+#sub_contents_area section.category{
+	margin-bottom: 80px;
+}
+
 #sub_contents_area h2{
 	margin:0 0 80px;
 	text-align:center;
@@ -792,4 +796,50 @@ margin: 50px 0 60px 0;
 .deliv_charge{
 	margin: 80px auto;
 	text-align: center;
+}
+
+#search_area select,
+#search_area input[type="text"]{
+	color: #666;
+	border: 1px solid #666;
+}
+#search_area select{
+	padding: 10.6px 10px;
+	margin-right: 5px;
+}
+#search_area input[type="text"]{
+	padding: 10px;
+}
+
+#search_area #search_text{
+	display: inline-flex;
+}
+
+#search_area input[type="text"]{
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#search_area #search_btn{
+	position: relative;
+	background-color: #43888a;
+	padding: 20px;
+	border: none;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	cursor: pointer;
+}
+#search_area #search_btn:before{
+	position:absolute;
+	content: '';
+	width: 1.3em;
+	height: 1.3em;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+	background-image: url(../img/interface/ico_search.svg);
+	top: 30%;
+	left: 25%;
 }

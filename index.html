@@ -25,7 +25,7 @@
 	<header>
 		<h1><img src="./img/interface/logo_header.png" alt="Guitar Room 501"></h1>
 		<span class="pc"></span>
-		<a class="insta_link_sp" href="https://www.instagram.com/guitarroom501/?img_index=1" target="_blank"><img src="../img/interface/insta_icon.png" alt="instagram"></a>
+		<a class="insta_link_sp" href="https://www.instagram.com/guitarroom501/?img_index=1" target="_blank"><img src="./img/interface/insta_icon.png" alt="instagram"></a>
 		<nav>
 			<ul>
 				<li class="menu-item"><a href="#">Home</a></li>
@@ -64,6 +64,31 @@
 		</ul>
 	</div>
 	<article id="inventory_area">
+		<section id="search_area" style="text-align: center;margin: 20px auto 60px;">
+			<form method="get" action="./cgi-bin/guitarroom501/catalog/index.php">
+				<select name="type" id="">
+					<option value="">カテゴリー</option>
+					<option value="">ALL</option>
+					<option value="1">Electric Guitar</option>
+					<option value="2">Electric Bass</option>
+					<option value="3">Acoustic Guitar</option>
+					<option value="4">Others</option>
+					<option value="5">Parts & Accessories</option>
+				</select>
+<!--#include virtual="./cgi-bin/guitarroom501/catalog/select.php"-->
+				<select name="condition" id="">
+					<option value="">状態</option>
+					<option value="">ALL</option>
+					<option value="new">NEW</option>
+					<option value="used">USED</option>
+					<option value="vintage">VINTAGE</option>
+				</select>
+				<div id="search_text">
+					<input type="text" name="search" placeholder="検索">
+					<button type="submit" name="submit" id="search_btn"></button>
+				</div>
+			</form>
+		</section>
 		<h2><span>New arrival</span>新入荷情報</h2>
 		<!--#include virtual="./cgi-bin/guitarroom501/top/new_item.php"-->
 	</article>

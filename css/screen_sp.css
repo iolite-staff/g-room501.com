@@ -333,3 +333,21 @@ body>.info_area .inner .item img{
 .deliv_charge img{
 	width: 100%;
 }
+
+#search_area{
+	padding: 0 20px;
+}
+
+#search_area select{
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#search_area #search_text{
+	width: 100%;
+}
+
+#search_area input[type="text"]{
+	width: 100%;
+}

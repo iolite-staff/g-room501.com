@@ -48,6 +48,31 @@
 	</header>
 	<article id="sub_contents_area">
 		<h1><span>Inventory</span>在庫</h1>
+		<section id="search_area" style="text-align: center;margin: 20px auto 60px;">
+			<form method="get" action="../cgi-bin/guitarroom501/catalog/index.php">
+				<select name="type" id="">
+					<option value="">カテゴリー</option>
+					<option value="">ALL</option>
+					<option value="1">Electric Guitar</option>
+					<option value="2">Electric Bass</option>
+					<option value="3">Acoustic Guitar</option>
+					<option value="4">Others</option>
+					<option value="5">Parts & Accessories</option>
+				</select>
+<!--#include virtual="../cgi-bin/guitarroom501/catalog/select.php"-->
+				<select name="condition" id="">
+					<option value="">状態</option>
+					<option value="">ALL</option>
+					<option value="new">NEW</option>
+					<option value="used">USED</option>
+					<option value="vintage">VINTAGE</option>
+				</select>
+				<div id="search_text">
+					<input type="text" name="search" placeholder="検索">
+					<button type="submit" name="submit" id="search_btn"></button>
+				</div>
+			</form>
+		</section>
 		<h2>Parts & Accessories</h2>
 		<div id="inventory_area">
 <!--#include virtual="../cgi-bin/guitarroom501/catalog/stocklist2.php?type=5"-->
