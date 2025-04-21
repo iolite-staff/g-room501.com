@@ -1,5 +1,5 @@
 #!/usr/local/bin/php
-<?
+<?php
 require_once('../inc/h_const.inc');
 require_once('../inc/h_file.inc');
 require_once('../inc/h_common.inc');
@@ -223,6 +223,8 @@ require_once('../inc/h_common.inc');
 			<div class="info">
 				<div class="tag">
 <?php
+
+
 	if($dat[8] == "checked"){
 		print("<span class=\"red\">SOLD OUT</span>\n");
 	}elseif($dat[9] == "checked"){

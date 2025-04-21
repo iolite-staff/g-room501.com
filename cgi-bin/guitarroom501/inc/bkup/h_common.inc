@@ -388,43 +388,42 @@ function download_file($path_file,$mime,$binary){
 //	作成者：H.Yamamura
 //	備　考：小数点未満は切り捨て、
 //****-----------------------------------------------------------****//
-function kingaku($fig_val, $type, $type2 = "") {
+function kingaku($fig_val,$type,$type2=""){
 
-	// 消費税率
+	//消費税率
 	$tax_ritu = 0.1;
 
-	// 消費税額（切り捨て）
+	//消費税額
 	$tax = floor((int)$fig_val * $tax_ritu);
 
-	// 税込み金額（税抜 + 税）
-	$komi_val = (int)$fig_val + $tax;
+	//税込み金額（整形済み）
+	$komi = "&yen;".number_format(floor((int)$fig_val + $tax));
 
-	// 【✨追加処理✨】税込価格の下3桁が999だったら +1 する
-	if (substr($komi_val, -3) === "999") {
-		$komi_val += 1;
+	//税抜き金額（整形済み）
+	$nuki = "&yen;".number_format(floor($fig_val));
+	
+	if($type2 == "Y"){
+		$tax2 = "税込";
+	}else{
+		$tax2 = "";
 	}
 
-	// 整形表示用
-	$komi = "&yen;" . number_format($komi_val);
-	$nuki = "&yen;" . number_format(floor($fig_val));
-
-	// 税込表示ラベル
-	$tax2 = ($type2 == "Y") ? "税込" : "";
-
-	// 表示形式に応じた出力
-	switch ($type) {
+	switch($type){
 		case 0:
+			return $nuki." (".$tax2.$komi.")";
+			break;
 		case 1:
-			return $nuki . " (" . $tax2 . $komi . ")";
+			return $nuki." (".$tax2.$komi.")";
+			break;
 		case 2:
-			return $nuki . " <small>(" . $tax2 . $komi . ")</small>";
+			return $nuki." <small>(".$tax2.$komi.")</small>";
+			break;
 		case 3:
-			return $komi . " <small>(" . $tax2 . ")</small>";
+			return $komi." <small>(".$tax2.")</small>";
 	}
 
 	return $fig_val;
 }
-
 //****-----------------------------------------------------------****//
 //	関数名：link_url
 //	引　数：
