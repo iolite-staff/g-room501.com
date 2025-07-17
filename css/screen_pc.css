@@ -57,10 +57,6 @@ div.link_pc a.insta_link_pc{
 .link_sp{
 	display: none;
 }
-.link_sp a img{
-	width: 23px;
-}
-
 
 body>header nav {
     background-color: #000;
