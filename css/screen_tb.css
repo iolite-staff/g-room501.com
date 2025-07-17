@@ -122,14 +122,13 @@ body>footer{
 .insta_link_pc{
 	display: none;
 }
-a.insta_link_sp{
+.link_sp{
 	position: absolute;
-	top: 5px;
-	left: 15px;
-	width: 30px;
+	top: 17px;
+	left: 10px;
 }
-a.insta_link_sp img{
-	width: 100%;
+.link_sp a img{
+	width: 30px;
 }
 
 #footer_content_area{

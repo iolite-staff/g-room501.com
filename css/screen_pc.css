@@ -37,23 +37,30 @@ body>header>a img{
 	vertical-align:bottom;
 	margin:10px 0 0;
 }
-a.insta_link_pc{
+div.link_pc{
 	position: absolute;
 	top: 20px;
 	right: 30px;
+
+}
+div.link_pc a img{
 	width: 30px;
 }
-a.insta_link_pc img{
-	width: 100%;
-}
-a.insta_link_pc img:hover{
+div.link_pc a img:hover{
 	opacity: 0.5;
 	transition: 0.3s;
 }
+div.link_pc a.insta_link_pc{
+	margin-left: 5px;
+}
 
-.insta_link_sp{
+.link_sp{
 	display: none;
 }
+.link_sp a img{
+	width: 23px;
+}
+
 
 body>header nav {
     background-color: #000;
