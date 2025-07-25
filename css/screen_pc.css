@@ -37,33 +37,6 @@ body>header>a img{
 	vertical-align:bottom;
 	margin:10px 0 0;
 }
-div.link_pc{
-	position: absolute;
-	top: 20px;
-	right: 30px;
-
-}
-div.link_pc a img{
-	width: 30px;
-}
-div.link_pc a img:hover{
-	opacity: 0.5;
-	transition: 0.3s;
-}
-div.link_pc a.insta_link_pc{
-	margin-left: 5px;
-}
-
-.link_sp{
-	display: none;
-}
-
-body>header nav {
-    background-color: #000;
-    margin-top: 55px;
-		position: relative;
-}
-
 body>header nav ul {
     display: flex;
     max-width: 985px;
@@ -99,6 +72,35 @@ body>header nav ul li a:visited {
 nav ul li.menu-item a:hover {
     opacity: 0.5;
 	transition: 0.15s;
+}
+
+div.link_pc{
+	position: absolute;
+	top: 20px;
+	right: 30px;
+
+}
+div.link_pc a img{
+	width: 30px;
+}
+div.link_pc a img:hover{
+	opacity: 0.5;
+	transition: 0.3s;
+}
+div.link_pc .x_link_pc img{
+	width: 27px;
+}
+div.link_pc a .insta_link_pc{
+	margin-left: 5px;
+}
+.link_sp{
+	display: none;
+}
+
+body>header nav {
+    background-color: #000;
+    margin-top: 55px;
+	position: relative;
 }
 
 /* Submenu styles */

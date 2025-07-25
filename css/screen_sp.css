@@ -125,6 +125,10 @@ div.link_pc{
 	width: 25px;
 }
 
+.link_sp .x_link_sp img{
+	width: 23px;
+}
+
 body>footer{
 	margin:150px 0 0;
 	background-color:#000;

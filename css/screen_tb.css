@@ -130,6 +130,9 @@ body>footer{
 .link_sp a img{
 	width: 30px;
 }
+.link_sp .x_link_sp img{
+	width: 27px;
+}
 
 #footer_content_area{
 	padding:50px 20px;
