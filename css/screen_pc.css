@@ -74,24 +74,20 @@ nav ul li.menu-item a:hover {
 	transition: 0.15s;
 }
 
-div.link_pc{
+.link_pc{
 	position: absolute;
 	top: 20px;
 	right: 30px;
-
 }
-div.link_pc a img{
+.link_pc a img{
 	width: 30px;
 }
-div.link_pc a img:hover{
+.link_pc a img:hover{
 	opacity: 0.5;
 	transition: 0.3s;
 }
-div.link_pc .x_link_pc img{
+.link_pc .x_link_pc img{
 	width: 27px;
-}
-div.link_pc a .insta_link_pc{
-	margin-left: 5px;
 }
 .link_sp{
 	display: none;
