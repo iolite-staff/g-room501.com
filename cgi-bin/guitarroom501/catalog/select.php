@@ -85,7 +85,7 @@ for($type=1;$type<=5;$type++){
 
 	//表示
 	$search_index = array_unique($search_index);
-	sort($search_index);
+	natcasesort($search_index);
 	foreach ($search_index as $index) {
 		print($index);
 	}	
