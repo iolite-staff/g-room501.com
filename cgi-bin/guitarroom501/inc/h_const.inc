@@ -1,6 +1,6 @@
 <?php
 //===================//
-// 2?o?C?g???????
+// 2バイト文字設定
 //===================//
 
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
@@ -8,69 +8,72 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
 mb_internal_encoding("SJIS");
 
 //===================//
-// ?t?@?C???p?X??A
+// ファイルパス関連
 //===================//
 
-//--- BASE?p?X?i??I?y?[?W???????N?j
+//--- BASEパス（静的ページへのリンク）
 //define("BASEPATH","http://demo.iolite.co.jp/guitarroom501/");
 define("BASEPATH","https://www.g-room501.com/");
 //define("BASEPATH","https://g-room501.com/");
 
-//--- resource?t?H???_
+//--- resourceフォルダ
 //define("IMGPATH","http://119.245.145.48/img/");
 //define("IMGPATH","http://demo.iolite.co.jp/guitarroom501/img/");
 define("IMGPATH","https://www.g-room501.com/img/");
 //define("IMGPATH","https://g-room501.com/img/");
 
-//--- detail?presource?t?H???_
+//--- detail用resourceフォルダ
 //define("DETAILIMGPATH","http://119.245.145.48/detail/img/");
 define("DETAILIMGPATH","https://www.g-room501.com/detail/img/");
 //define("DETAILIMGPATH","https://g-room501.com/detail/img/");
 
-//--- howto?presource?t?H???_
+//--- howto用resourceフォルダ
 //define("HOWTOIMGPATH","http://119.245.145.48/howto/img/");
 define("HOWTOIMGPATH","https://www.g-room501.com/howto/img/");
 //define("HOWTOIMGPATH","https://g-room501.com/howto/img/");
 
-//--- ???s?T?[?o?[?t?H???_
+//--- 実行サーバーフォルダ
 //define("PHPPATH","http://demo.iolite.co.jp/guitarroom501/cgi-bin/guitarroom501/");
 define("PHPPATH","https://www.g-room501.com/cgi-bin/guitarroom501/");
 
-//--- ?t?@?C???f?[?^?t?H???_
+//--- ファイルデータフォルダ
 //define("DATPATH","../../data/");
 define("DATPATH","../../../data/");
 
-//--- ?t?@?C???f?[?^?t?H???_(???\???p?j
+//--- ファイルデータフォルダ（画像表示用）
 //define("DATPATH2","../../guitarroom501/data/");
 define("DATPATH2","../../../data/");
 
-//--- ?t?@?C???f?[?^?t?H???_(inventory???\???p?j
+//--- ファイルデータフォルダ（inventory画像表示用）
 //define("DATPATH3","../../../guitarroom501/data/");
 define("DATPATH3","../../../../data/");
+//--- ファイルデータフォルダ（inventory検索結果画像表示用）
+//define("DATPATH4","../../../data/");
+define("DATPATH4","../../../../data/");
 
-//--- ?B??t?@?C???f?[?^?t?H???_
+//--- 隠れファイルデータフォルダ
 //define("SDATPATH","../../cgi-bin/data/");
 define("SDATPATH","../data/");
 
 //===================//
-// ???[?????
+// メール設定
 //===================//
 
-//???{??G???R?[?h???
+//日本語エンコード設定
 mb_language("Japanese");
 
 //===================//
-// ?f?o?b?N?p
+// デバック用
 //===================//
 
-//--- ?f?o?b?O???[?h
+//--- デバッグモード
 //define("DEBUG",true);
 define("DEBUG",false);
 
-//--- Version???
+//--- Version番号
 define("VER","1.9 Build 050615");
 
-//?J?^???O?^?C?v??o?^??\????
+//カタログタイプ別登録可能件数
 define("CATALOG_TYPE_1", 800);
 define("CATALOG_TYPE_2", 300);
 define("CATALOG_TYPE_3", 1300);
